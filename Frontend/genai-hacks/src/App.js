@@ -1,0 +1,20 @@
+import './App.css';
+import Dashboard from './Dashboard.js';
+import Agent from './Agent.js'
+import Home from './home.js';
+import { Routes, Route } from 'react-router-dom';
+import Choices from './choices.js';
+
+function App() {
+  return (
+    // React app
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/choices" element={<Choices />} />
+      {/* <Route path="/agent/:agentType" element={<Agent />} /> */}
+    </Routes>
+  );
+}
+
+
+export default App;
