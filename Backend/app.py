@@ -14,5 +14,6 @@ app.register_blueprint(dietplan_bp, url_prefix='/api/dietplan')
 def home():
     return "Backend is running!"
 
-if __name__ == 'main':
+
+if __name__ == '__main__':
     app.run(debug=True, port=5050)
