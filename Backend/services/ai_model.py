@@ -1,11 +1,9 @@
-from flask import Flask, request, jsonify
 import os
 import google.generativeai as genai
 from dotenv import load_dotenv
 
 load_dotenv()
 
-app = Flask(__name__)
 
 api_key = os.getenv("GEMINI_API_KEY")
 genai.configure(api_key=api_key)
@@ -46,29 +44,3 @@ def generate_nutrition_plan(weight, height, weight_unit, height_unit, wake_up_ti
     response = model.generate_content(prompt)
     return response.text
 
-@app.route('/nutrition_plan', methods=['POST'])
-def get_nutrition_plan():
-    """API endpoint to generate a nutrition plan."""
-    data = request.get_json()
-
-    # Extract user input from JSON request
-    weight = data.get('weight')
-    height = data.get('height')
-    weight_unit = data.get('weightUnit')
-    height_unit = data.get('heightUnit')
-    wake_up_time = data.get('wakeUpTime')
-    work_start_time = data.get('workStartTime')
-    work_end_time = data.get('workEndTime')
-    schedule = data.get('schedule')
-    vegetarian = data.get('vegetarian')
-    non_vegetarian = data.get('nonVegetarian')
-    restrictions = data.get('restrictions')
-
-    # Generate nutrition plan
-    nutrition_plan = generate_nutrition_plan(weight, height, weight_unit, height_unit, wake_up_time, work_start_time, work_end_time, schedule, vegetarian, non_vegetarian, restrictions)
-
-    # Return nutrition plan as JSON response
-    return jsonify({'nutritionPlan': nutrition_plan})
-
-if __name__ == '__main__':
-    app.run(debug=True)  # Set debug=False in production
