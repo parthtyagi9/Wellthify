@@ -1,10 +1,14 @@
 from flask import Flask, request, jsonify
+import os
 import google.generativeai as genai
+from dotenv import load_dotenv
+
+load_dotenv()
 
 app = Flask(__name__)
 
-# Configure your Gemini API key
-genai.configure(api_key="AIzaSyANy_OxS3gihvNvsKfVIz0hkqNK7EabRWY")  # Replace with your actual API key
+api_key = os.getenv("GEMINI_API_KEY")
+genai.configure(api_key=api_key)
 
 def calculate_bmi(weight, height, weight_unit, height_unit):
     """Calculates BMI based on weight and height."""
