@@ -74,11 +74,10 @@ Scan QR code on the final slide of our [Pitch Deck](./GenAI_Healthcare_Pitch_Pre
 
 ## Team
 
-- Parth Tyagi - parth
+- Parth Tyagi
 - Jaimin Patel 
-- [Teammate 2]
-- [Teammate 3]
-- [etc.]
+- Mohammed Sufiyaan Moinuddin Shaikh
+- Kshitij Karia
 
 ---
 
