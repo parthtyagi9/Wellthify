@@ -184,8 +184,9 @@ function Dietitian() {
         >
           {loading ? (
             <>
-              <span className="loading-spinner"></span>
-              Generating Plan...
+              <p><span className="loading-spinner"></span>
+              Generating Plan...</p>
+              
             </>
           ) : 'Generate Diet Plan'}
         </button>

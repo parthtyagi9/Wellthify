@@ -36,7 +36,7 @@
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 10px;
-    color: var(--text-primary);
+    color: var(--green-color);
   }
   
   .dietitian-header p {
@@ -133,6 +133,10 @@
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     margin-top: 10px;
+    align-content: center;
+    vertical-align: middle;
+  }
+  .submit-button span, .submit-button p {
     vertical-align: middle;
   }
   
