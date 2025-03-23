@@ -1,4 +1,4 @@
-#!/Users/parth/Downloads/GenAI/genAI-Hacks/backend/venv/bin/python3
+#!/Users/kshitijkaria/GenAI_main/Wellthify/Backend/venv/bin/python3.13
 # -*- coding: utf-8 -*-
 import re
 import sys

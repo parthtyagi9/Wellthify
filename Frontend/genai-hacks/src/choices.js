@@ -10,8 +10,10 @@ function Choices() {
   const navigate = useNavigate();
 
   const handleChoice = (choice) => {
+
+    if (choice === 'Fitness Trainer') {window.open("http://localhost:5173/", "_blank"); return;} else {
     // Navigate to the appropriate page based on user selection
-    navigate(`/agent/${choice}`);
+    navigate(`/agent/${choice}`);}
     // You could also pass state with the navigation if needed
     // navigate(`/dashboard/${choice}`, { state: { agentType: choice } });
   };
