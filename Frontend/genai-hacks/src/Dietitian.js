@@ -33,21 +33,41 @@ function Dietitian() {
     e.preventDefault();
     setLoading(true);
     setPlan('');
-
+  
+    // Convert to standard units (e.g., kg and meters)
+    let weight = parseFloat(formData.weight);
+    let height = parseFloat(formData.height);
+  
+    if (formData.weightUnit === 'lbs') {
+      weight = weight * 0.453592; // lbs to kg
+    }
+  
+    if (formData.heightUnit === 'in') {
+      height = height * 0.0254; // inches to meters
+    }
+  
+    const normalizedData = {
+      ...formData,
+      weight: weight.toFixed(2),
+      height: height.toFixed(2),
+      weightUnit: 'kg', // for consistency, mark as standardized
+      heightUnit: 'm',
+    };
+  
     try {
       const res = await fetch(`${API_BASE_URL}/api/dietplan/generate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData)
+        body: JSON.stringify(normalizedData),
       });
-
+  
       const data = await res.json();
       setPlan(data.nutritionPlan || 'No plan returned');
     } catch (err) {
       console.error('Error:', err);
       setPlan('An error occurred. Please try again.');
     }
-
+  
     setLoading(false);
   };
 
