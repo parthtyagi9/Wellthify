@@ -42,7 +42,7 @@ import { ChatProvider } from "./components/hooks/useChat.jsx";
 import { useEffect } from "react";
 import "./therapistUI.css";
 
-function Agent() {
+function Therapist() {
   useEffect(() => {
     document.body.classList.add("therapist-background");
     return () => {
@@ -69,4 +69,4 @@ function Agent() {
   );
 }
 
-export default Agent;
+export default Therapist;
