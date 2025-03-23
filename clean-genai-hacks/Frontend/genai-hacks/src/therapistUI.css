@@ -1,0 +1,108 @@
+/* src/therapistUI.css */
+
+/* The entire overlay container, pinned to all edges, 
+   so the 3D scene is behind it. */
+   .ui-container {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1rem;
+    pointer-events: none;
+  }
+  
+  /* The top bar with the title and subtitles */
+  .top-bar {
+    backdrop-filter: blur(8px);
+    background: rgba(255, 255, 255, 0.5);
+    max-width: 280px;
+    padding: 1rem;
+    border-radius: 12px;
+    pointer-events: auto;
+  }
+  
+
+  .title {
+    margin: 0;
+    font-weight: 900;
+    font-size: 1.6rem; /* Increased from 1.2rem */
+    color: #ff4545; /* Matching the red color shown */
+    margin-bottom: 0.5rem;
+  }
+  
+  .controls {
+    display: flex;
+    gap: 0.75rem; /* Increased from 0.5rem */
+    margin-top: 1rem; /* Increased from 0.5rem */
+    pointer-events: auto;
+  }
+  
+
+  .control-button {
+    background: #3078f6; /* Changed to match the blue in the image */
+    color: white;
+    border: none;
+    padding: 0.9rem 1.2rem; /* Slightly larger padding */
+    border-radius: 8px; /* Increased from 6px */
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    min-width: 80px; /* Ensure consistent button width */
+  }
+  
+  /* The bottom row for input and send button */
+  .input-row {
+    display: flex;
+    gap: 0.5rem;
+    pointer-events: auto;
+    max-width: 600px;
+    width: 100%;
+    align-self: flex-end;
+  }
+  
+  .chat-input {
+    flex: 1;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+  
+  .send-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  /* src/therapistUI.css */
+
+/* Therapist background image (normal mode) */
+body.therapist-background {
+    background: url('../public/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+  
+  /* Green screen mode (toggled via button) */
+  body.therapist-background.greenScreen {
+    background: url('../public/background2.jpg') no-repeat center center fixed;
+    background-size: cover;
+  }
+  /* Fullscreen wrapper */
+.therapist-wrapper {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+  }
+  
+  /* Canvas should fill screen */
+  .therapist-canvas {
+    width: 100vw;
+    height: 100vh;
+    display: block;
+  }
