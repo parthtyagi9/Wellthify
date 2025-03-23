@@ -6,7 +6,6 @@ import { Routes, Route } from 'react-router-dom';
 import Choices from './choices.js';
 import Dietitian from './Dietitian';
 
-
 function App() {
   return (
     // React app
@@ -14,7 +13,6 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/choices" element={<Choices />} />
       <Route path="/agent/Dietitian" element={<Dietitian />} />
-      
       {/* <Route path="/agent/:agentType" element={<Agent />} /> */}
     </Routes>
   );

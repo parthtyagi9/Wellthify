@@ -8,8 +8,8 @@ def generate_plan():
     data = request.get_json()
     if data is None:
         return jsonify({'error': 'Invalid or missing JSON'}), 400
-    weight = data.get('weight')
-    height = data.get('height')
+    weight = float(data.get('weight', 0))
+    height = float(data.get('height', 0))
     weight_unit = data.get('weightUnit')
     height_unit = data.get('heightUnit')
     wake_up_time = data.get('wakeUpTime')

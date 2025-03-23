@@ -38,7 +38,7 @@ def generate_nutrition_plan(weight, height, weight_unit, height_unit, wake_up_ti
 
     bmi_category = get_bmi_category(bmi)
 
-    prompt = f"""The user's BMI is {bmi:.2f}, categorized as {bmi_category}. Their wake-up time is {wake_up_time}, work hours are from {work_start_time} to {work_end_time}, and their daily schedule is: {schedule}. They are {vegetarian if vegetarian else ''} {non_vegetarian if non_vegetarian else ''} and have the following dietary restrictions: {restrictions}. Please create a detailed nutrition plan for them from morning to night, with specific meal suggestions and approximate calorie/macronutrient information, that is suited to their BMI and schedule. Generate it in points so that it is easy to read"""
+    prompt = f"""The user's BMI is {bmi:.2f}, categorized as {bmi_category}. Their wake-up time is {wake_up_time}, work hours are from {work_start_time} to {work_end_time}, and their daily schedule is: {schedule}. They are {vegetarian if vegetarian else ''} {non_vegetarian if non_vegetarian else ''} and have the following dietary restrictions: {restrictions}. Please create a detailed nutrition plan for them from morning to night, with specific meal suggestions and approximate calorie/macronutrient information, that is suited to their BMI and schedule. Generate it in points so that it is easy to read and format it as a markdown file"""
 
     model = genai.GenerativeModel("gemini-2.0-pro-exp-02-05")  # or gemini-1.5-pro if you want the smarter one
     response = model.generate_content(prompt)

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { API_BASE_URL } from './config';
 import './dietitian.css';
+import PlanDisplay from './PlanDisplay';
 
 function Dietitian() {
   const [formData, setFormData] = useState({
@@ -190,12 +191,8 @@ function Dietitian() {
         </button>
       </form>
 
-      {plan && (
-        <div className="plan-result">
-          <h3>Your Personalized Diet Plan</h3>
-          <div className="plan-content">{plan}</div>
-        </div>
-      )}
+      {/* Render the plan in a pretty, markdown-enabled display */}
+      {plan && <PlanDisplay plan={plan} />}
     </div>
   );
 }
