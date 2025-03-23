@@ -22,7 +22,7 @@
 // export default App;
 import './App.css';
 import Dashboard from './Dashboard.js';
-import Agent from './Agent.js';  // Our 3D therapist scene
+import Therapist from './Therapist.js';  // Our 3D therapist scene
 import Home from './home.js';
 import { Routes, Route } from 'react-router-dom';
 import Choices from './choices.js';
@@ -36,7 +36,7 @@ function App() {
       <Route path="/agent/Dietitian" element={<Dietitian />} />
 
       {/* The 3D therapist route */}
-      <Route path="/agent/Therapist" element={<Agent />} />
+      <Route path="/agent/Therapist" element={<Therapist />} />
     </Routes>
   );
 }
