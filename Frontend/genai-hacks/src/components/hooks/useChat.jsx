@@ -57,37 +57,40 @@
 //   }
 //   return context;
 // };
-// src/components/hooks/useChat.jsx
 import { createContext, useContext, useEffect, useState } from "react";
 import { API_BASE_URL } from "../../config";
 
+// 1) Create the context
 const ChatContext = createContext();
 
 export const ChatProvider = ({ children }) => {
   const [messages, setMessages] = useState([]);
-  const [message, setMessage] = useState(null);
+  const [currentMessage, setCurrentMessage] = useState(null);
   const [loading, setLoading] = useState(false);
   const [cameraZoomed, setCameraZoomed] = useState(true);
 
-  // Send text to your Flask route => Node => response
-  const chat = async (text) => {
-    if (!text.trim()) return;
+  // 2) Our function to talk to the Flask backend
+  const chat = async (userText) => {
+    // Don’t send empty or whitespace
+    if (!userText.trim()) return;
+
     setLoading(true);
     try {
-      const resp = await fetch(`${API_BASE_URL}/api/therapist/chat`, {
+      // POST to the Flask route, which calls Node behind the scenes
+      const res = await fetch(`${API_BASE_URL}/api/therapist/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: text }),
+        body: JSON.stringify({ message: userText }),
       });
-      const data = await resp.json();
+      const data = await res.json();
 
-      // If Node returns { messages: [] }, handle that
+      // The Node code returns { messages: [ { text, audio, facialExpression, ... }, ... ] }
       if (data.messages) {
-        setMessages((prev) => [...prev, ...data.messages]);
-      }
-      // If Node returns { response: "...", audio: "base64..." }, handle that
-      else {
-        setMessages((prev) => [...prev, data]);
+        // Store them in our array
+        setMessages(prev => [...prev, ...data.messages]);
+      } else {
+        // If Node returned a single object
+        setMessages(prev => [...prev, data]);
       }
     } catch (err) {
       console.error("Therapist chat error:", err);
@@ -95,28 +98,46 @@ export const ChatProvider = ({ children }) => {
     setLoading(false);
   };
 
-  // After we finish playing a message's audio, remove it from the queue
+  // 3) This function is called when the audio finishes
   const onMessagePlayed = () => {
-    setMessages((old) => old.slice(1));
+    // Remove the first message from the queue
+    setMessages(old => old.slice(1));
   };
 
+  // 4) Whenever our “messages” array changes,
+  //    set “currentMessage” to the first item
   useEffect(() => {
     if (messages.length > 0) {
-      setMessage(messages[0]);
+      setCurrentMessage(messages[0]);
     } else {
-      setMessage(null);
+      setCurrentMessage(null);
     }
   }, [messages]);
+
+  // 5) Whenever we get a new “currentMessage”,
+  //    if it has an “audio” field, play it
+  useEffect(() => {
+    if (!currentMessage) return;
+
+    // If there's an audio field, play it
+    if (currentMessage.audio) {
+      const audio = new Audio(`data:audio/mp3;base64,${currentMessage.audio}`);
+      audio.play();
+      // When the audio ends, remove the first message
+      audio.onended = onMessagePlayed;
+    }
+  }, [currentMessage]);
 
   return (
     <ChatContext.Provider
       value={{
+        // Expose things to your UI
         chat,
-        message,
-        onMessagePlayed,
         loading,
         cameraZoomed,
-        setCameraZoomed
+        setCameraZoomed,
+        // If you want to show the entire conversation in a chat box:
+        messages
       }}
     >
       {children}
@@ -124,6 +145,7 @@ export const ChatProvider = ({ children }) => {
   );
 };
 
+// 6) Expose a “useChat” hook for easy usage in React
 export const useChat = () => {
   const context = useContext(ChatContext);
   if (!context) {
