@@ -76,13 +76,13 @@
 
 /* Therapist background image (normal mode) */
 body.therapist-background {
-    background: url('/Users/parth/Downloads/GenAI/genAI-Hacks/clean-genai-hacks/Frontend/genai-hacks/public/background.jpg') no-repeat center center fixed;
+    background: url('../public/background.jpg') no-repeat center center fixed;
     background-size: cover;
   }
   
   /* Green screen mode (toggled via button) */
   body.therapist-background.greenScreen {
-    background: url('/Users/parth/Downloads/GenAI/genAI-Hacks/clean-genai-hacks/Frontend/genai-hacks/public/background2.jpg') no-repeat center center fixed;
+    background: url('../public/background2.jpg') no-repeat center center fixed;
     background-size: cover;
   }
   /* Fullscreen wrapper */

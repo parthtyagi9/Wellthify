@@ -38,7 +38,7 @@ import { Canvas } from "@react-three/fiber";
 import { Leva } from "leva";
 import { Experience } from "./components/Experience.jsx";
 import UI from "./components/UI.jsx";
-import { ChatProvider } from "/Users/parth/Downloads/GenAI/genAI-Hacks/clean-genai-hacks/Frontend/genai-hacks/src/components/hooks/useChat.jsx";
+import { ChatProvider } from "./components/hooks/useChat.jsx";
 import { useEffect } from "react";
 import "./therapistUI.css";
 
