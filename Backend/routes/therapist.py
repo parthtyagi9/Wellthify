@@ -27,17 +27,19 @@ therapist_bp = Blueprint('therapist', __name__)
 @therapist_bp.route('/chat', methods=['POST'])
 def chat():
     try:
-        data = request.get_json()
-        user_message = data.get('message')
+        user_data = request.get_json()
+        user_message = user_data.get('message')
 
-        # call Node service
-        node_response = requests.post(
+        # Call Node's therapist
+        node_resp = requests.post(
             'http://localhost:4000/chat',
-            json={'message': user_message}
+            json={'message': user_message},
+            timeout=10  # in seconds
         )
-        result = node_response.json()
 
-        # Just pass along the Node's JSON to your frontend
+        # If Node isn't running, you'll get Connection Refused
+        # If you do, check Node logs or run Node again
+        result = node_resp.json()
         return jsonify(result)
 
     except Exception as e:
