@@ -204,13 +204,12 @@ const SpeechRecognition =
   window.SpeechRecognition || window.webkitSpeechRecognition;
 
 function UI() {
-  const { chat, loading, cameraZoomed, setCameraZoomed } = useChat();
+  const { chat, loading } = useChat();
   const inputRef = useRef(null);
-  
+
   const [recording, setRecording] = useState(false);
   const [recognition, setRecognition] = useState(null);
 
-  // Setup speech recognition on mount
   useEffect(() => {
     if (SpeechRecognition) {
       const rec = new SpeechRecognition();
@@ -259,18 +258,11 @@ function UI() {
 
   return (
     <div className="ui-container">
-      {/* Top left: Title + controls */}
-      <div className="top-bar">
+      {/* Top right: Title + controls */}
+      <div className="top-bar" style={{ alignSelf: "flex-end" }}>
         <h1 className="title">Virtual Therapist</h1>
         <p>Discover Yourself</p>
         <div className="controls">
-          <button
-            onClick={() => setCameraZoomed(!cameraZoomed)}
-            className="control-button"
-          >
-            {cameraZoomed ? "Zoom Out" : "Zoom In"}
-          </button>
-
           <button onClick={toggleGreenScreen} className="control-button">
             Green Screen
           </button>
@@ -293,11 +285,7 @@ function UI() {
             if (e.key === "Enter") sendMessage();
           }}
         />
-        <button
-          onClick={sendMessage}
-          className="send-button"
-          disabled={loading}
-        >
+        <button onClick={sendMessage} className="send-button" disabled={loading}>
           {loading ? "..." : "Send"}
         </button>
       </div>
