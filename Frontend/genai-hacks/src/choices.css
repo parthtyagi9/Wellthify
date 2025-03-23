@@ -1,6 +1,5 @@
 /* Choices Page Styles */
 .choices-container {
-    min-height: 100vh;
     background-color: #121212;
     color: white;
     display: flex;
@@ -14,6 +13,7 @@
     width: 100%;
     max-width: 1200px;
     text-align: center;
+    max-height: 80vh;
   }
   
   .choices-title {
@@ -21,6 +21,7 @@
     font-weight: 800;
     color: #9c27b0; /* Using your secondary color from the variables */
     margin-bottom: 1rem;
+    margin-top: 0;
     text-transform: uppercase;
     font-style: italic;
   }
