@@ -1,0 +1,99 @@
+/* Choices Page Styles */
+.choices-container {
+    background-color: #121212;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    padding-top: 1.5rem;
+  }
+  
+  .choices-content {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+    max-height: 80vh;
+  }
+  
+  .choices-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #9c27b0; /* Using your secondary color from the variables */
+    margin-bottom: 1rem;
+    margin-top: 0;
+    text-transform: uppercase;
+    font-style: italic;
+  }
+  
+  .choices-subtitle {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 3rem;
+  }
+  
+  .choices-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .choice-card {
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+  
+  .choice-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px #9c27b0;
+  }
+  
+  .choice-image-container {
+    overflow: hidden;
+    aspect-ratio: 1 / 1.2;
+    margin-bottom: 1rem;
+  }
+  
+  .choice-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+
+  .choice-card:hover .choice-image {
+    transform: scale(1.05);
+  }
+  
+  .choice-label {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #00ffb2; /* Yellow color for labels */
+    text-transform: uppercase;
+    margin-top: 0.5rem;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 992px) {
+    .choices-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .choices-title {
+      font-size: 2.5rem;
+    }
+    
+    .choices-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .choice-card {
+      max-width: 400px;
+      margin: 0 auto;
+    }
+  }
