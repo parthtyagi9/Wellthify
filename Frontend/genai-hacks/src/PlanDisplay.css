@@ -1,7 +1,7 @@
 .plan-result {
     margin-top: 30px;
     padding: 20px;
-    background: #fdfdfd;
+    background: #1a1a1a;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
@@ -11,7 +11,7 @@
   }
   
   .plan-content {
-    line-height: 1.6;
+    line-height: 1.2;
   }
   
   .plan-content h1,
@@ -19,7 +19,7 @@
   .plan-content h3 {
     margin-top: 1em;
     margin-bottom: 0.5em;
-    color: #333;
+    color: var(--primary-color);
   }
   
   .plan-content ul {
