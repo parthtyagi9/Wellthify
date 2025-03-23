@@ -14,6 +14,7 @@ function App() {
       <Route path="/" element={<Home />} />
       <Route path="/choices" element={<Choices />} />
       <Route path="/agent/Dietitian" element={<Dietitian />} />
+      
       {/* <Route path="/agent/:agentType" element={<Agent />} /> */}
     </Routes>
   );

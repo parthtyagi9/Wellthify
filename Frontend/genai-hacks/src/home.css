@@ -1,7 +1,7 @@
 html {
-    --primary-color: #3a0751;
+    --primary-color: #9c27b0;
     --secondary-color: #ff3b35;
-    --background-color: #f8e5b4;
+    --background-color: #fcd34d;
     --text-color: #000000;
     --button-color: #3a0751;
     --button-text-color: #ffffff;
@@ -109,7 +109,7 @@ html {
   }
   
   .cta-button {
-    background-color: #fde047; /* Yellow color similar to the GET STARTED button in the image */
+    background-color: var(--background-color); /* Yellow color similar to the GET STARTED button in the image */
     color: black;
     border: none;
     padding: 1rem 2rem;
@@ -121,7 +121,7 @@ html {
   }
   
   .cta-button:hover {
-    background-color: #fcd34d;
+    background-color: var(--primary-color);
     transform: translateY(-3px);
   }
   
