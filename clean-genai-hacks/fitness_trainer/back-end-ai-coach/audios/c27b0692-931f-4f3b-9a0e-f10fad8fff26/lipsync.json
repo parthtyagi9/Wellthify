@@ -1,0 +1,39 @@
+{
+  "metadata": {
+    "soundFile": "/Users/kshitijkaria/GenAI_2025_v3/final-ai-coach/back-end-ai-coach/audios/c27b0692-931f-4f3b-9a0e-f10fad8fff26/output.wav",
+    "duration": 4.83
+  },
+  "mouthCues": [
+    { "start": 0.00, "end": 0.04, "value": "B" },
+    { "start": 0.04, "end": 0.15, "value": "D" },
+    { "start": 0.15, "end": 0.22, "value": "B" },
+    { "start": 0.22, "end": 0.36, "value": "C" },
+    { "start": 0.36, "end": 0.43, "value": "B" },
+    { "start": 0.43, "end": 0.57, "value": "E" },
+    { "start": 0.57, "end": 0.72, "value": "C" },
+    { "start": 0.72, "end": 1.19, "value": "B" },
+    { "start": 1.19, "end": 1.27, "value": "A" },
+    { "start": 1.27, "end": 1.46, "value": "F" },
+    { "start": 1.46, "end": 1.67, "value": "B" },
+    { "start": 1.67, "end": 1.81, "value": "C" },
+    { "start": 1.81, "end": 1.88, "value": "B" },
+    { "start": 1.88, "end": 1.95, "value": "H" },
+    { "start": 1.95, "end": 2.02, "value": "C" },
+    { "start": 2.02, "end": 2.10, "value": "A" },
+    { "start": 2.10, "end": 2.38, "value": "B" },
+    { "start": 2.38, "end": 2.67, "value": "X" },
+    { "start": 2.67, "end": 2.72, "value": "B" },
+    { "start": 2.72, "end": 3.05, "value": "F" },
+    { "start": 3.05, "end": 3.12, "value": "B" },
+    { "start": 3.12, "end": 3.19, "value": "C" },
+    { "start": 3.19, "end": 3.61, "value": "B" },
+    { "start": 3.61, "end": 3.68, "value": "G" },
+    { "start": 3.68, "end": 3.82, "value": "B" },
+    { "start": 3.82, "end": 3.89, "value": "E" },
+    { "start": 3.89, "end": 4.03, "value": "B" },
+    { "start": 4.03, "end": 4.17, "value": "F" },
+    { "start": 4.17, "end": 4.24, "value": "C" },
+    { "start": 4.24, "end": 4.52, "value": "B" },
+    { "start": 4.52, "end": 4.83, "value": "X" }
+  ]
+}

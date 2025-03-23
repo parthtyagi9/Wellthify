@@ -1,0 +1,5 @@
+.env
+node_modules
+bin
+audios/message_*
+careful-prism-454505-d9-9743c6e0e78e.json

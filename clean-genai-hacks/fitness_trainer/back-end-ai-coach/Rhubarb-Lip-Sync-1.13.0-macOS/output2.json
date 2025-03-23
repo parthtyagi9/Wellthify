@@ -1,0 +1,28 @@
+{
+  "metadata": {
+    "soundFile": "/Users/kshitijkaria/GenAI_2025_v3/final-ai-therapist/back-end-ai-therapist/output.ogg",
+    "duration": 4.24
+  },
+  "mouthCues": [
+    { "start": 0.00, "end": 0.09, "value": "X" },
+    { "start": 0.09, "end": 0.20, "value": "C" },
+    { "start": 0.20, "end": 0.48, "value": "E" },
+    { "start": 0.48, "end": 0.77, "value": "F" },
+    { "start": 0.77, "end": 0.98, "value": "E" },
+    { "start": 0.98, "end": 1.12, "value": "B" },
+    { "start": 1.12, "end": 1.32, "value": "X" },
+    { "start": 1.32, "end": 1.62, "value": "B" },
+    { "start": 1.62, "end": 1.90, "value": "C" },
+    { "start": 1.90, "end": 2.11, "value": "B" },
+    { "start": 2.11, "end": 2.39, "value": "F" },
+    { "start": 2.39, "end": 2.53, "value": "B" },
+    { "start": 2.53, "end": 2.74, "value": "H" },
+    { "start": 2.74, "end": 2.81, "value": "C" },
+    { "start": 2.81, "end": 2.95, "value": "B" },
+    { "start": 2.95, "end": 3.09, "value": "C" },
+    { "start": 3.09, "end": 3.37, "value": "F" },
+    { "start": 3.37, "end": 3.45, "value": "A" },
+    { "start": 3.45, "end": 3.91, "value": "B" },
+    { "start": 3.91, "end": 4.24, "value": "X" }
+  ]
+}
