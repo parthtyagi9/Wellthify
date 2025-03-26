@@ -68,7 +68,10 @@
 ## Live Demo
 
 https://youtu.be/FagtUz-Is5s?si=93smaTSZVYSjykln 
-Scan QR code on the final slide of our [Pitch Deck](./GenAI_Healthcare_Pitch_Presentation_Updated.pptx)
+
+## Devpost
+
+https://devpost.com/software/wellthify
 
 ---
 
